@@ -178,28 +178,15 @@ Tab2:AddSlider({
 Tab3:AddSection({"Hitbox Tab"})
 Tab3:AddParagraph({
     Name = "Hitbox Paragraph",
-    Text = "This is where you can activate Hitbox also Change the Hitbox size using Textbox or Slider"
+    Text = "This is where you can activate Hitbox also Change the Hitbox size using Slider and Change hitbox transparency using Textbox"
 })
 
--- Slider for Hitbox Transparency
-Tab3:AddSlider({
-    Name = "Hitbox Transparency",
-    Min = 0.1,
-    Max = 1,
-    Default = 0.5,
-    Callback = function(Value)
-        _G.Transparency = Value
-    end
-})
-
--- Slider for Hitbox Size
-Tab3:AddSlider({
-    Name = "Hitbox Size",
-    Min = 0.1,
-    Max = 50,
-    Default = 16,
-    Callback = function(Value)
-        _G.HeadSize = Value 
+Tab3:AddTextBox({
+    Name = "Hitbox transparency",
+    Default = "",
+    TextDisappear = false,
+    Callback = function(value)
+        _G.Transparency = tonumber(value)
     end
 })
 
@@ -217,7 +204,7 @@ Tab3:AddButton({
                             if humanoidRootPart then
                                 humanoidRootPart.Size = Vector3.new(_G.HeadSize or 16, _G.HeadSize or 16, _G.HeadSize or 16)
                                 humanoidRootPart.Transparency = _G.Transparency or 0.5
-                                humanoidRootPart.BrickColor = BrickColor.new("Bright red") -- Corrected line
+                                humanoidRootPart.BrickColor = BrickColor.new("Really black") -- Corrected line
                                 humanoidRootPart.Material = Enum.Material.Neon
                                 humanoidRootPart.CanCollide = false
                             end
@@ -341,71 +328,8 @@ Tab6:AddButton({"Nameless admin script", function()
     print("Hello World!")
 end})
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Tab7:AddSection({"How to use?"})
 Tab8:AddSection({"About update"})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 Tab9:AddSection({"Setting"})
 local Paragraph = Tab9:AddParagraph({
@@ -442,7 +366,7 @@ Tab9:AddButton({
     Callback = function()
         Window:Dialog({
             Title = "Confirm Rejoin",
-            Text = "Are you sure you want to rejoin?",
+            Text = "Are you sure do you really want to rejoin?",
             Options = {
                 {"Confirm", function()
                     game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, plr)
@@ -455,15 +379,13 @@ Tab9:AddButton({
     end
 })
 
-Tab9:AddSection({""})
-
 -- ServerHop Button 
 Tab9:AddButton({
     Name = "Server Hop",
     Callback = function()
         Window:Dialog({
             Title = "Confirm Server Hop",
-            Text = "Are you sure you do you want to server hop?",
+            Text = "Are you sure you do you want to server hop Huh?",
             Options = {
                 {"Confirm", function()
                     local HttpService = game:GetService("HttpService")
@@ -507,7 +429,7 @@ Tab9:AddButton({
 })
 
 Tab9:AddButton({
-    Name = "Server Hop to Lo player Server",
+    Name = "Server Hop to Low player Server",
     Callback = function()
         Window:Dialog({
             Title = "Confirm Server Hop",
@@ -553,4 +475,3 @@ Tab9:AddButton({
         })
     end
 })
-
