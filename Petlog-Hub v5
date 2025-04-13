@@ -1,6 +1,6 @@
-local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/realredz/RedzLibV5/refs/heads/main/Source.lua"))()
+local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/newredz/RedzLibV5/refs/heads/main/Source.lua"))()
 
-local Window = redzlib:MakeWindow({"Petlog Hub | Premium Version", "By John", "testando-redzLibv5.json"})
+local Window = redzlib:MakeWindow({"Petlog Hub | Premium Version", "NAH HAHA IS THIS GOOD?", "testando-redzLibv5.json"})
 Window:AddMinimizeButton({
   Button = { Image = redzlib:GetIcon("rbxassetid://15298567397"), BackgroundTransparency = 0 },
   Corner = { CornerRadius = UDim.new(0, 6) }
